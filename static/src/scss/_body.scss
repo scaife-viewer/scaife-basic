@@ -1,0 +1,12 @@
+body {
+  font-family: 'Noto Sans';
+}
+
+#content_body {
+  @extend .container;
+  padding-top: 50px;
+}
+
+p.lead b {
+  font-weight: bold;
+}
