@@ -98,7 +98,8 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.template.context_processors.request",
                 "django.contrib.messages.context_processors.messages",
-                "basic.context_processors.settings"
+                "basic.context_processors.settings",
+                "account.context_processors.account",
             ],
         },
     },
@@ -202,7 +203,7 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 ACCOUNT_USE_AUTH_AUTHENTICATE = True
 
 AUTHENTICATION_BACKENDS = [
-    "basic.backends.UsernameAuthenicationBackend",
+    "basic.backends.UsernameAuthenticationBackend",
     # "account.auth_backends.UsernameAuthenticationBackend",
 ]
 
