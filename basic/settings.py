@@ -202,7 +202,8 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 ACCOUNT_USE_AUTH_AUTHENTICATE = True
 
 AUTHENTICATION_BACKENDS = [
-    "account.auth_backends.UsernameAuthenticationBackend",
+    "basic.backends.UsernameAuthenicationBackend",
+    # "account.auth_backends.UsernameAuthenticationBackend",
 ]
 
 LOGIN_URL = "account_login"
