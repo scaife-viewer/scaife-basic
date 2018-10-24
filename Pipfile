@@ -3,8 +3,13 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[requires]
+python_version = "3.7"
+
 [packages]
-Django = "*"
+django-user-accounts = "*"
+pinax-eventlog = "*"
+django = "<2.1"
 pinax-templates = "*"
 django-webpack-loader = "*"
 

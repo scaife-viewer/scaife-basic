@@ -39,8 +39,15 @@
   </header>
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% block body_base %}
+  <section id="content_body">
+    <div class="container">
+      {% block body %}{% endblock %}
+    </div>
+  </section>
+{% endblock %}
 
+{% block footer %}{% endblock %}
 
 {% block scripts %}
     {% if VUE_DEBUG %}<script src="http://localhost:8098"></script>{% endif %}
