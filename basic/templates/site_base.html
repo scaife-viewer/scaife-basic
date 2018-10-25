@@ -39,6 +39,21 @@
   </header>
 {% endblock %}
 
+{% block body_base %}
+<main>
+    {% block content_left %}{% endblock %}
+    <section id="content-section">
+        <div class="messages-container">
+            {% block messages %}{% include "_messages.html" %}{% endblock %}
+        </div>
+        <div id="content-body">
+            {% block body %}{% endblock %}
+        </div>
+    </section>
+    {% block content_right %}{% endblock %}
+</main>
+{% endblock %}
+
 {% block footer %}{% endblock %}
 
 {% block scripts %}
