@@ -98,7 +98,8 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.template.context_processors.request",
                 "django.contrib.messages.context_processors.messages",
-                "basic.context_processors.settings"
+                "basic.context_processors.settings",
+                "account.context_processors.account",
             ],
         },
     },
@@ -131,6 +132,10 @@ INSTALLED_APPS = [
     # templates
     "bootstrapform",
     "pinax.templates",
+
+    # external
+    "account",
+    "pinax.eventlog",
 
     # project
     "basic",
@@ -183,8 +188,30 @@ FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-
 if DEBUG:
     TEMPLATES[0]["OPTIONS"]["context_processors"].append("basic.context_processors.vue_debug")
+
+
+SESSION_COOKIE_NAME = "sv-sessionid"
+
+ACCOUNT_OPEN_SIGNUP = True
+ACCOUNT_EMAIL_UNIQUE = True
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+ACCOUNT_LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_REDIRECT_URL = "home"
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
+ACCOUNT_USE_AUTH_AUTHENTICATE = True
+
+AUTHENTICATION_BACKENDS = [
+    "basic.backends.UsernameAuthenticationBackend",
+    # "account.auth_backends.UsernameAuthenticationBackend",
+]
+
+LOGIN_URL = "account_login"
+
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "")
+EMAIL_PORT = os.environ.get("EMAIL_PORT", "")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_TLS = True
