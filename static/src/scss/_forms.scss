@@ -14,6 +14,9 @@ form {
     button {
         @include button-variant($primary, $primary);
     }
+    select {
+        @extend .custom-select;
+    }
 }
 
 button {
