@@ -10,9 +10,8 @@ python_version = "3.7"
 django-user-accounts = "*"
 pinax-eventlog = "*"
 django = "*"
-pinax-templates = "*"
 django-webpack-loader = "*"
-
+pinax-templates = "*"
 
 [dev-packages]
 "flake8" = "<3.6"

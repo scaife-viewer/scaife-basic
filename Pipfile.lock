@@ -70,11 +70,11 @@
         },
         "pinax-templates": {
             "hashes": [
-                "sha256:c13d453146117002c955f81ad2f43f6a75aa024d346697b2bfec4782a8f6d81d",
-                "sha256:f3635cc7fc7aa932096f633e6f793140ee88dc5d151f77a4bc90c4f1d903408d"
+                "sha256:df3ff60fd2ba74e23363d13ffd7d13c9839821288ad53a4534c3da432a221fe4",
+                "sha256:f6bfeaa64e1ec981b5d3c909c3b3a5258f3af70f717426106307fd687568e56a"
             ],
             "index": "pypi",
-            "version": "==2.0.1"
+            "version": "==2.0.2"
         },
         "pytz": {
             "hashes": [
