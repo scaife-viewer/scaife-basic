@@ -1,0 +1,12 @@
+dist: xenial   # required for Python >= 3.7
+language: python
+python:
+  - 3.7
+
+install:
+  - npm install
+  - pipenv install
+
+script:
+  - pipenv run ./manage.py migrate
+  - pipenv run ./manage.py loaddata sites
